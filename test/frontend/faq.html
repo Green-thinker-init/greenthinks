@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CHOOSE TOPIC OF FAQs</title>
+  <style>
+    body {
+      background-color: #2f7d7d;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    button {
+      display: block;
+      margin: 40px auto;
+      padding: 15px 40px;
+      font-size: 20px;
+      border: none;
+      border-radius: 15px;
+      background-color: #111711;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ed7ba3;
+    }
+  </style>
+</head>
+<body>
+  <h1>CHOOSE TOPIC OF FAQs</h1>
+  
+  <button onclick="openDecarbonization()">Decarbonization</button>
+  <button onclick="openFundraiser()">Fundraiser</button>
+  <button onclick="openLoginSignup()">Login/Signup</button>
+
+  <script>
+    function openDecarbonization() {
+      window.open("faqdecarbonization.html", "_blank");
+    }
+
+    function openFundraiser() {
+      window.open("fundraiserbut.html", "_blank");
+    }
+
+    function openLoginSignup() {
+      window.open("loginbut.html", "_blank");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+!DOCTYPE html>
+<html>
+<head>
+  <title>Join Initiative Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e5a5d;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 40px;
+      color: #0e131c;
+      margin-bottom: 30px;
+      margin-top: 20px;
+    }
+
+    .form-wrapper {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #0b070e;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      color: #d3def1;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group input[type="email"]:focus,
+    .form-group input[type="date"]:focus {
+      outline: none;
+      border-color: #276b5a;
+      box-shadow: 0 0 0 2px rgba(76, 81, 191, 0.3);
+    }
+
+    .form-group .btn {
+      background-color: #1c5d45;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-group .btn:hover {
+      background-color: #21cf2f;
+    }
+  </style>
+</head>
+<body>
+  <h1>Join Initiative</h1>
+  <div class="form-wrapper">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="text" id="age" name="age" required>
+    </div>
+
+    <div class="form-group">
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn">Join</button>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2f7d7d;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #131411;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(215, 34, 34, 0.1);
+    }
+    
+    h1 {
+      text-align: center;
+      color: #fdf2f2;
+    }
+    
+    .team-member {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .team-member h3 {
+      margin: 0;
+      color: #f3eded;
+    }
+    
+    .team-member p {
+      margin: 5px 0;
+      color: #ef8484;
+    }
+    
+    .contact-form {
+      margin-top: 40px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      color: #faf6f6;
+      margin-bottom: 5px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #eeeded;
+      border-radius: 4px;
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      height: 120px;
+    }
+    
+    .form-group button {
+      padding: 10px 20px;
+      background-color: #205b39;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .form-group button:hover {
+      background-color: #17f060;
+    }
+    
+    .message {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    
+    .message-success {
+      background-color: #e6f4ea;
+      color: #2ecc71;
+    }
+    
+    .message-error {
+      background-color: #f7e6e6;
+      color: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Contact Us</h1>
+    
+    <div class="team-member">
+      <div>
+        <h3>Vansh Kalantri</h3>
+        <p>Email: vanshkalantri759@gmail.com</p>
+        <p>Phone: +91 9521801845</p>
+      </div>
+    </div>
+    
+    <div class="team-member">
+      <div>
+        <h3>Harsh Agrawal</h3>
+        <p>Email: harshag9354@gmail.com</p>
+        <p>Phone: +91 9354403664</p>
+      </div>
+    </div>
+    
+    <div class="team-member">
+      <div>
+        <h3>Krishna Randad</h3>
+        <p>Email: krishnarandad9@gmail.com</p>
+        <p>Phone: +91 9422860229</p>
+      </div>
+    </div>
+    
+    <div class="team-member">
+      <div>
+        <h3>Madhur Toshniwal</h3>
+        <p>Email: madhurtoshniwal03@gmail.com</p>
+        <p>Phone: +91 7248942163</p>
+      </div>
+    </div>
+    
+    <div class="team-member">
+      <div>
+        <h3>Vraj Govani</h3>
+        <p>Email: vrajgovani253@gmail.com</p>
+        <p>Phone: +91 9313643274</p>
+      </div>
+    </div>
+    
+    <div class="contact-form">
+      <h3>Send us a message</h3>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      <div id="messageStatus"></div>
+    </div>
+    
+    <script>
+      // Submit form and show success/error message
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        var form = event.target;
+        var formData = new FormData(form);
+        
+        // Simulate form submission
+        setTimeout(function() {
+          var messageStatus = document.getElementById('messageStatus');
+          
+          var successMessage = document.createElement('div');
+          successMessage.className = 'message message-success';
+          successMessage.textContent = 'Message sent successfully!';
+          
+          var errorMessage = document.createElement('div');
+          errorMessage.className = 'message message-error';
+          errorMessage.textContent = 'Failed to send message. Please try again later.';
+          
+          var showMessage = function(element) {
+            messageStatus.innerHTML = '';
+            messageStatus.appendChild(element);
+          };
+          
+          // Randomly show success or error message
+          if (Math.random() < 0.5) {
+            showMessage(successMessage);
+          } else {
+            showMessage(errorMessage);
+          }
+          
+          // Clear form fields
+          form.reset();
+
+          // Show "Submitted successfully" message
+          var submittedMessage = document.createElement('div');
+          submittedMessage.className = 'message message-success';
+          submittedMessage.textContent = 'Submitted successfully!';
+          showMessage(submittedMessage);
+        }, 1000);
+      });
+    </script>
+  </div>
+</body>
+</html>

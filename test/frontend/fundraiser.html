@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fundraiser Website</title>
+  <style>
+    body {
+        background-color: #2f7d7d;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+        background-color: #2f7d7d;
+      padding: 20px;
+    }
+
+    h1 {
+        background-color: #2f7d7d;
+        color: #060b0f;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      background-color: #2f7d7d;
+      padding: 5px;
+    }
+
+    nav ul li a:hover {
+        background-color: #2f7d7d;
+      color: #fff;  
+    }
+
+    #banner {
+        background-color: #060b0b;
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+    }
+
+    #banner h2 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    #banner p {
+      font-size: 18px;
+    }
+
+    button {
+      background-color: #041f39;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    section {
+      padding: 50px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .step {
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .step:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .step img {
+      width: 100px;
+      transition: transform 0.3s ease;
+    }
+
+    .step:hover img {
+      transform: scale(1.1);
+    }
+
+    .step h3 {
+      margin-top: 20px;
+      font-size: 24px;
+      transition: color 0.3s ease;
+    }
+
+    .step p {
+      font-size: 16px;
+    }
+
+    .sell-button {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sell-button::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .sell-button:hover::after {
+      opacity: 1;
+    }
+
+    .sell-button a {
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+  <script>
+    function showSellSection() {
+      window.open("sell.html", "_blank");
+    }
+
+    function apply() {
+      alert("Applied successfully!");
+    }
+
+    function submitInvoice() {
+      window.location.href = "upload.html";
+    }
+
+    function shareProof() {
+      alert("Proof shared successfully!");
+    }
+
+    function submitContribution() {
+      alert("Submit Contribution button clicked!");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Fundraiser Website</h1>
+    <nav>
+      <ul>
+        <li><a href="whydonate.html">Why Donate?</a></li>
+        <li><a href="#" onclick="showSellSection()">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="banner">
+    <h2>Help Us Make a Difference</h2>
+    <p>Your Support Matters!</p>
+    <p>Share your impact on social media using our hashtag:</p>
+    <p>#MakeADifference</p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At Fundraiser Website, we are dedicated to creating positive change in the world by raising funds for impactful projects and initiatives. Join us in making a difference today!</p>
+  </section>
+
+  <section id="steps">
+    <h2>Get Involved:</h2>
+    <div class="step" onclick="apply()">
+      <h3>Apply for Funding</h3>
+      <p>If you have shifted to green energy and have successfully decarbonized your lifestyle, you can apply to receive funds for your initiatives.</p>
+      <button onclick="apply()">Apply</button>
+    </div>
+    <div class="step" onclick="submitInvoice()">
+      <h3>Submit Carbon Reduction Invoice</h3>
+      <p>After receiving the funds, submit the invoice of the product you used to reduce carbon content and contribute to a sustainable future.</p>
+      <button onclick="submitInvoice()">Submit Invoice</button>
+    </div>
+    <div class="step" onclick="shareProof()">
+      <h3>Share Impact Proof</h3>
+      <p>Share the impact of your carbon reduction efforts by posting pictures, stories, and testimonials on social media using our dedicated hashtag.</p>
+      <button onclick="shareProof()">Share Proof</button>
+    </div>
+    <div class="step" onclick="submitContribution()">
+      <h3>Submit Contribution</h3>
+      <p>Ready to contribute? Submit your donation securely and conveniently through our online donation platform to support more green initiatives.</p>
+      <button class="sell-button"><a href="#" onclick="showSellSection()">Click Here to Donate</a></button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Fundraiser Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>

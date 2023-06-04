@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Industries</title>
+  <style>
+    .upload-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #42a970;
+      color: #282424;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+    
+    .upload-button:hover {
+      background-color: #1976D2;
+    }
+    
+    .progress-bar {
+      width: 0%;
+      height: 20px;
+      background-color: #2196F3;
+      transition: width 0.5s ease-in-out;
+    }
+    
+    .progress-bar span {
+      display: none;
+    }
+    
+    h1 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Industries</h1>
+  <h2>Report Submission</h2>
+  <div>
+    <label for="document-upload" class="upload-button">Choose Document</label>
+    <input type="file" id="document-upload" accept=".doc, .docx, .pdf" style="display: none;">
+  </div>
+  <div class="progress-bar" id="document-progress"></div>
+  
+  <h2>Report Image</h2>
+  <div>
+    <label for="image-upload" class="upload-button">Choose Image</label>
+    <input type="file" id="image-upload" accept="image/*" style="display: none;">
+  </div>
+  <div class="progress-bar" id="image-progress"></div>
+  
+  <h2>Collect Coins</h2> <!-- New heading -->
+  
+  <script>
+    function updateProgressBar(elementId, percentage) {
+      const progressBar = document.getElementById(elementId);
+      progressBar.style.width = percentage + '%';
+    }
+
+    // Initialize progress bars
+    updateProgressBar('document-progress', '');
+    updateProgressBar('image-progress', '');
+    
+    function uploadDocument() {
+      const uploadButton = document.getElementById('document-upload');
+      const progressBar = document.getElementById('document-progress');
+      const file = uploadButton.files[0];
+      
+      if (file) {
+        const fileSize = file.size;
+        let uploadedSize = 0;
+        const chunkSize = 1024 * 10; // 10KB
+        
+        const interval = setInterval(() => {
+          if (uploadedSize < fileSize) {
+            const percentage = Math.floor((uploadedSize / fileSize) * 100);
+            updateProgressBar('document-progress', percentage);
+            uploadedSize += chunkSize;
+          } else {
+            updateProgressBar('document-progress', 100);
+            clearInterval(interval);
+          }
+        }, 200);
+      }
+    }
+    
+    function uploadImage() {
+      const uploadButton = document.getElementById('image-upload');
+      const progressBar = document.getElementById('image-progress');
+      const file = uploadButton.files[0];
+      
+      if (file) {
+        const fileSize = file.size;
+        let uploadedSize = 0;
+        const chunkSize = 1024 * 10; // 10KB
+        
+        const interval = setInterval(() => {
+          if (uploadedSize < fileSize) {
+            const percentage = Math.floor((uploadedSize / fileSize) * 100);
+            updateProgressBar('image-progress', percentage);
+            uploadedSize += chunkSize;
+          } else {
+            updateProgressBar('image-progress', 100);
+            clearInterval(interval);
+          }
+        }, 200);
+      }
+    }
+    
+    // Trigger file input click on label click
+    document.querySelectorAll('label.upload-button').forEach(label => {
+      const inputId = label.getAttribute('for');
+      const input = document.getElementById(inputId);
+      label.addEventListener('click', () => {
+        input.click();
+      });
+    });
+  </script>
+</body>
+</html>
